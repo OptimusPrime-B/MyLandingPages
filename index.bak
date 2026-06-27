@@ -1,1 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acme Landing</title>
+  <style>
+    :root { --bg:#0b1020; --card:#121a33; --text:#e8ecff; --muted:#aab3d6; --brand:#6d5efc; }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      background: radial-gradient(1200px 600px at 20% 0%, rgba(109,94,252,.35), transparent 60%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(0,209,255,.18), transparent 55%),
+                  var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:0 20px;}
+    header{padding:20px 0;}
+    .nav{display:flex; align-items:center; justify-content:space-between; gap:16px;}
+    .logo{font-weight:800; letter-spacing:.3px;}
+    .links{display:flex; gap:18px; font-weight:600; color:var(--muted)}
+    .hero{padding:48px 0 10px;}
+    .hero-grid{display:grid; grid-template-columns:1.15fr .85fr; gap:24px; align-items:center;}
+    @media (max-width: 860px){ .hero-grid{grid-template-columns:1fr; } }
+    h1{font-size:48px; line-height:1.05; margin:0 0 14px;}
+    @media (max-width: 460px){ h1{font-size:36px;} }
+    .sub{color:var(--muted); font-size:16px; margin:0 0 22px; max-width:55ch;}
+    .btn-row{display:flex; gap:12px; flex-wrap:wrap;}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 18px; border-radius:12px; font-weight:800;
+      border:1px solid rgba(255,255,255,.10);
+    }
+    .btn.primary{background:var(--brand); border-color:transparent;}
+    .btn.secondary{background:transparent;}
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.10);
+      border-radius:18px;
+      padding:18px;
+      box-shadow:0 18px 45px rgba(0,0,0,.35);
+    }
+    .stats{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:14px;}
+    .stat{background:rgba(255,255,255,.04); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:14px;}
+    .stat b{display:block; font-size:18px; margin-bottom:6px;}
+    section{padding:34px 0;}
+    .sec-title{margin:0 0 12px; font-size:26px;}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:14px;}
+    @media (max-width: 900px){ .grid3{grid-template-columns:1fr; } }
+    .feature{background:rgba(18,26,51,.7); border:1px solid rgba(255,255,255,.10); border-radius:16px; padding:16px;}
+    .feature h3{margin:0 0 8px; font-size:18px;}
+    .feature p{margin:0; color:var(--muted); line-height:1.5;}
+    .cta{padding:40px 0 60px;}
+    .cta-box{display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap;}
+    form{display:flex; gap:10px; flex-wrap:wrap;}
+    input[type="email"]{
+      padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12);
+      background:transparent; color:var(--text); min-width:260px; outline:none;
+    }
+    input[type="email"]::placeholder{color:rgba(168,178,214,.7)}
+    footer{padding:24px 0; color:var(--muted); font-size:14px; text-align:center;}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="nav">
+      <div class="logo">Acme</div>
+      <div class="links">
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
 
+  <main class="wrap">
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>Launch faster with a simple landing page.</h1>
+          <p class="sub">
+            A clean, modern layout you can deploy immediately to GitHub Pages.
+            Replace the text and colors to match your brand.
+          </p>
+          <div class="btn-row">
+            <a class="btn primary" href="#contact">Get started</a>
+            <a class="btn secondary" href="#features">See features</a>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <b>Fast</b>
+              <span style="color:var(--muted)">Just HTML + CSS</span>
+            </div>
+            <div class="stat">
+              <b>Responsive</b>
+              <span style="color:var(--muted)">Works on mobile</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" aria-label="Preview card">
+          <h2 style="margin:0 0 8px; font-size:20px;">What you get</h2>
+          <p style="margin:0; color:var(--muted); line-height:1.6;">
+            A hero section, features, pricing, and a contact form area—ready to customize.
+          </p>
+          <div style="margin-top:14px; color:var(--muted); font-weight:700;">
+            ✓ Headline + CTA
+            <br/>✓ Feature cards
+            <br/>✓ Pricing table (simple)
+            <br/>✓ Footer
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <h2 class="sec-title">Features</h2>
+      <div class="grid3">
+        <div class="feature">
+          <h3>Clean design</h3>
+          <p>Modern colors, spacing, and typography built in.</p>
+        </div>
+        <div class="feature">
+          <h3>Easy to edit</h3>
+          <p>Replace text, links, and styles directly in this file.</p>
+        </div>
+        <div class="feature">
+          <h3>GitHub Pages ready</h3>
+          <p>Put `index.html` in your repo and deploy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <h2 class="sec-title">Pricing</h2>
+      <div class="grid3">
+        <div class="feature">
+          <h3>Starter</h3>
+          <p style="font-weight:800; color:var(--text); font-size:22px; margin:10px 0;">
+            $0 <span style="font-size:14px; color:var(--muted); font-weight:700;">/ month</span>
+          </p>
+          <p>For trying the layout.</p>
+        </div>
+        <div class="feature">
+          <h3>Pro</h3>
+          <p style="font-weight:800; color:var(--text); font-size:22px; margin:10px 0;">
+            $19 <span style="font-size:14px; color:var(--muted); font-weight:700;">/ month</span>
+          </p>
+          <p>For personal projects.</p>
+        </div>
+        <div class="feature">
+          <h3>Team</h3>
+          <p style="font-weight:800; color:var(--text); font-size:22px; margin:10px 0;">
+            $49 <span style="font-size:14px; color:var(--muted); font-weight:700;">/ month</span>
+          </p>
+          <p>For multiple users.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta">
+      <div class="cta-box">
+        <div>
+          <h2 class="sec-title" style="margin:0 0 8px;">Contact</h2>
+          <p class="sub" style="margin:0;">
+            Add your email handling later. This is a front-end form area.
+          </p>
+        </div>
+        <form onsubmit="event.preventDefault(); alert('Thanks! (Demo form)');">
+          <input type="email" placeholder="you@example.com" required />
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Acme. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
